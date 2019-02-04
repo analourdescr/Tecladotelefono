@@ -38,7 +38,7 @@ namespace GraficadorSeñales
             }
         }
 
-        public void truncar (double n)
+        public void truncar(double n)
         {
             foreach (Muestra muestra in Muestras)
             {
@@ -53,9 +53,9 @@ namespace GraficadorSeñales
             }
         }
 
-        public void escalar (double factor)
+        public void escalar(double factor)
         {
-            foreach(Muestra muestra in Muestras)
+            foreach (Muestra muestra in Muestras)
             {
                 muestra.Y *= factor;
             }
@@ -64,7 +64,7 @@ namespace GraficadorSeñales
         public void actualizarAmplitudMaxima()
         {
             AmplitudMaxima = 0;
-            foreach(Muestra muestra in Muestras)
+            foreach (Muestra muestra in Muestras)
             {
                 if (Math.Abs(muestra.Y) > AmplitudMaxima)
                 {
@@ -99,7 +99,7 @@ namespace GraficadorSeñales
                 indice++;
                 resultado.Muestras.Add(muestraResultado);
             }
-            
+
             return resultado;
         }
 
@@ -172,7 +172,7 @@ namespace GraficadorSeñales
                     muestra += señal.Muestras[n].Y * Complex.Exp((-2 * Math.PI * Complex.ImaginaryOne * k * n) / señal.Muestras.Count);
                 }
                 // Magnitude permite acceder a un número imaginario como número real.
-                transformada.Muestras.Add(new Muestra((double)k/(double)señal.Muestras.Count, muestra.Magnitude));
+                transformada.Muestras.Add(new Muestra((double)k / (double)señal.Muestras.Count, muestra.Magnitude));
             }
 
             return transformada;
